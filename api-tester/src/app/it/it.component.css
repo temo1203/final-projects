@@ -1,0 +1,10 @@
+input {
+  width: 150px;
+  height: 40px;
+  border: 1px solid #00ffff;
+}
+button {
+  background-color: #00ffff;
+  width: 150px;
+  height: 40px;
+}

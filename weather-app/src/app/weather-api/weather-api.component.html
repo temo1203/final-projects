@@ -1,0 +1,73 @@
+<h1 class="text-3xl text-center my-5 text-blue-500">
+  Search for the weather and enter country name in input
+</h1>
+<form class="my-5">
+  <label
+    for="default-search"
+    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+    >Search</label
+  >
+  <div class="relative">
+    <div
+      class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+    >
+      <svg
+        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 20 20"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+        />
+      </svg>
+    </div>
+    <input
+      #val
+      type="search"
+      id="default-search"
+      class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder="Search for the weather"
+      required
+    />
+    <button
+      (click)="Receiver(val.value)"
+      type="button"
+      class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Search
+    </button>
+  </div>
+</form>
+<div class="bg-black w-[300px] m-auto">
+  <h1 class="text-green-400 text-center py-5 text-3xl">{{ city }}</h1>
+  <div class="flex justify-center">
+    <img src="{{ iconUrl }}" alt="img" />
+  </div>
+  <ul class="pb-6 text-blue-300 flex justify-center flex-col items-center">
+    <li>Temp: {{ WeatherTemp }}</li>
+    <li>Feels like: {{ WeatherFeel }}</li>
+    <li>Pressure: {{ WeatherPressure }}</li>
+    <li>Humidity: {{ WeatherHum }}</li>
+    <ul>
+      summary:
+      {{
+        sum
+      }}
+    </ul>
+  </ul>
+</div>
+<div *ngIf="Err" class="w-[272px]" role="alert">
+  <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">Error</div>
+  <div
+    class="flex justify-between border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700"
+  >
+    <p>Country was not found</p>
+    <button (click)="Bool()" class="hover:text-black transition-all">X</button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="header">
+  <h2>My To Do List</h2>
+  <input #Name type="text" placeholder="Title..." />
+  <button (click)="Click(Name.value)" class="addBtn">Add</button>
+</div>
+<div class="Div">
+  <ul *ngFor="let value of Values; let index = index">
+    <li>{{ index }}. {{ value }}</li>
+    <button (click)="del(value)">X</button>
+  </ul>
+</div>
