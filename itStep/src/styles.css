@@ -23,7 +23,9 @@ h2 {
   cursor: pointer !important;
 }
 body {
-  height: 4000px;
+  /* height: 4000px; */
+  overflow: auto !important;
+  position: static !important;
 }
 
 html, body { height: 100%; }

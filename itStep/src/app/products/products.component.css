@@ -47,3 +47,37 @@
 .rating mat-icon {
   color: #d2691e;
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
+.pop {
+  border-radius: 10px;
+  width: 500px;
+  padding: 20px;
+  background-color: aquamarine;
+  position: absolute;
+  top: 26%;
+  left: 35%;
+}
+.del {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.del ion-icon {
+  width: 30px;
+  height: 30px;
+  color: #808080;
+}
+mat-divider {
+  margin: 15px 0px;
+}
+.rating {
+  margin-bottom: 20px;
+}
+form button,.pop > button:last-child {
+  width: 150px;
+  padding: 10px;
+  height: 40px;
+} 
