@@ -13,12 +13,18 @@
     </div>
     <div class="product-search">
       <div class="products">
-        <div class="product-card" *ngFor="let value of productData">
-          <a href="#" class="product-image">
+        <div
+          class="product-card"
+          (click)="
+            productClick(value.id, value.image, value.title, value.price)
+          "
+          *ngFor="let value of productData"
+        >
+          <a class="product-image">
             <img [src]="value.image" alt="product image" />
           </a>
           <div class="product-details">
-            <a href="#">
+            <a>
               <h5 class="product-title">{{ value.title }}</h5>
             </a>
             <div class="price-and-rating">
@@ -49,7 +55,6 @@
                 <span class="rating-value">{{ value.rating.rate }}</span>
               </div>
             </div>
-            <a href="#" class="add-to-cart-button">Add to cart</a>
           </div>
         </div>
       </div>

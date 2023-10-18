@@ -71,6 +71,7 @@ h1 {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .product-image {
@@ -99,7 +100,6 @@ h1 {
 
 .product-details {
   margin: 20px 20px 0;
-  padding-bottom: 34px;
 }
 
 .product-title {
@@ -112,8 +112,10 @@ h1 {
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+
   padding-bottom: 20px;
+  gap: 15px;
+  flex-direction: column-reverse;
 }
 
 .product-price {

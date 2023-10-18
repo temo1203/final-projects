@@ -19,6 +19,12 @@ a {
 h1 {
   margin: 0;
 }
+h2 {
+  cursor: pointer !important;
+}
 body {
   height: 4000px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

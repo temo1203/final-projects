@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="product">
+    <img [src]="img" alt="" />
+    <div class="content">
+      <h1 [innerHTML]="name | lineBreak">{{ name }}</h1>
+      <p>Show more</p>
+      <ul>
+        <li>{{ price | currency : "₾" }}</li>
+        <li>
+          <button>შეფასება</button>
+          <button>კალათაში დამატება</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="pop">
+    <div class="del">
+      <h1>შეფასება</h1>
+      <ion-icon name="close-outline"></ion-icon>
+      <mat-divider></mat-divider>
+    </div>
+    <h1>Rating</h1>
+    <div class="rating">
+      <mat-icon *ngFor="let star of stars" (click)="setRating(star)">{{
+        star
+      }}</mat-icon>
+    </div>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Fill form field</mat-label>
+        <input matInput placeholder="Placeholder" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </p>
+  </div>
+</div>

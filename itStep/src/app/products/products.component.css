@@ -1,0 +1,49 @@
+.container {
+  padding: 0px 30px;
+}
+.product {
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+.product img {
+  width: 400px;
+  height: 500px;
+  padding: 25px;
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 167px;
+}
+.product p {
+  color: #d2691e;
+  cursor: pointer;
+}
+.product ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product ul > li:last-child {
+  display: flex;
+  gap: 20px;
+}
+.product ul button {
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #ffff;
+}
+.product ul li > button:first-child {
+  background-color: blueviolet;
+}
+.product ul li > button:last-child {
+  background-color: #d2691e;
+}
+.rating mat-icon {
+  color: #d2691e;
+}
