@@ -7,16 +7,16 @@
       <ul>
         <li>{{ price | currency : "₾" }}</li>
         <li>
-          <button>შეფასება</button>
+          <button (click)="openPop()">შეფასება</button>
           <button>კალათაში დამატება</button>
         </li>
       </ul>
     </div>
   </div>
-  <div class="pop">
+  <div *ngIf="popBool" id="custom-dialog" class="pop">
     <div class="del">
       <h1>შეფასება</h1>
-      <ion-icon name="close-outline"></ion-icon>
+      <ion-icon (click)="closePop()" name="close-outline"></ion-icon>
     </div>
     <mat-divider></mat-divider>
     <h1>Rating</h1>
@@ -25,19 +25,37 @@
         star
       }}</mat-icon>
     </div>
-    <form>
+    <form [formGroup]="form">
       <mat-form-field appearance="fill">
         <mat-label>Fill form field</mat-label>
-        <input matInput placeholder="email1234@gmail.com" />
+        <input
+          formControlName="email"
+          matInput
+          placeholder="email1234@gmail.com"
+        />
+        <mat-error *ngIf="fc.email.invalid">{{ "error" }}</mat-error>
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Textarea</mat-label>
-        <textarea placeholder="Write description" matInput></textarea>
+        <textarea
+          formControlName="textarea"
+          placeholder="Write description"
+          matInput
+        ></textarea>
+        <mat-error *ngIf="fc.textarea.invalid">{{ "error" }}</mat-error>
       </mat-form-field>
-      <button mat-flat-button color="primary">შეფასება</button>
+
+      <button
+        (click)="SubmitForm()"
+        type="submit"
+        mat-flat-button
+        color="primary"
+      >
+        შეფასება
+      </button>
     </form>
     <mat-divider></mat-divider>
-    <button mat-flat-button color="warn">დახურვა</button>
+    <button (click)="closePop()" mat-flat-button color="warn">დახურვა</button>
   </div>
 </div>

@@ -9,13 +9,17 @@ import { HomeComponent } from './home/home.component';
 import { IonicModule } from '@ionic/angular';
 import { ProductsComponent } from './products/products.component';
 import { PipesPipe } from './pipes.pipe';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +30,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     PipesPipe,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -37,7 +42,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

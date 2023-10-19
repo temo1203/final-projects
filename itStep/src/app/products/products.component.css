@@ -76,8 +76,12 @@ mat-divider {
 .rating {
   margin-bottom: 20px;
 }
-form button,.pop > button:last-child {
+form button,
+.pop > button:last-child {
   width: 150px;
   padding: 10px;
   height: 40px;
-} 
+}
+.display {
+  display: block;
+}

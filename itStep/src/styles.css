@@ -26,7 +26,12 @@ body {
   /* height: 4000px; */
   overflow: auto !important;
   position: static !important;
+  height: 100% !important;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body.swal2-height-auto {
+  height: 100% !important;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
