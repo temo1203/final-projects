@@ -1,17 +1,7 @@
-<div class="main-container">
-  <div class="main-container-lite">
-    <div class="slider">
-      <div class="slider-content">
-        <h1>
-          კომპიუტერები, <br />
-          ტანსაცმელები და სხვა
-        </h1>
-        <button>
-          სრულად ნახვა <ion-icon name="chevron-forward-outline"></ion-icon>
-        </button>
-      </div>
-    </div>
-    <div class="product-search">
+<h1 class="h1_lite">{{ filterTag }}</h1>
+<div class="container">
+  <div class="container-lite">
+    <div class="products-search">
       <div class="products">
         <div
           class="product-card"
@@ -56,22 +46,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="search-bar">
-        <ul>
-          <li
-            (click)="navigateToFilters(index)"
-            *ngFor="let value of searchBar; let index = index"
-          >
-            {{ value }} <ion-icon name="chevron-forward-outline"></ion-icon>
-          </li>
-        </ul>
-
-        <div class="aside-search">
-          <p *ngFor="let value of asideSearchBar">
-            {{ value }}
-          </p>
         </div>
       </div>
     </div>

@@ -9,4 +9,7 @@ export class ApiServiceService {
   GetProductApi() {
     return this.http.get(this.api);
   }
+  PostProduct(string: string) {
+    return this.http.post(this.api, string);
+  }
 }

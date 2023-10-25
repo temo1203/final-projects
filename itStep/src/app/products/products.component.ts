@@ -1,21 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { ApiServiceService } from '../api-service.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
   popBool: boolean = false;
   id: any = '';
   img: string = '';
   name: string = '';
   price: any = '';
   form: any;
-  emailRegex = /[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
-  constructor(private route: ActivatedRoute, private fb: FormBuilder) {
+  var: any = 'comments';
+  nameRegex = /^[a-z\-]+$/;
+  ngOnInit(): void {}
+  constructor(
+    private service: ApiServiceService,
+    private route: ActivatedRoute,
+    private fb: FormBuilder
+  ) {
     this.route.queryParams.subscribe((params) => {
       this.id = params['productId'];
       this.img = params['productImage'];
@@ -24,13 +31,13 @@ export class ProductsComponent {
       // console.log(this.id, this.name, this.price, this.img);
     });
     this.form = fb.group({
-      email: [
+      name: [
         '',
         [
           Validators.required,
           Validators.minLength(3),
           Validators.maxLength(30),
-          Validators.pattern(this.emailRegex),
+          Validators.pattern(this.nameRegex),
         ],
       ],
       textarea: [

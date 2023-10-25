@@ -9,15 +9,7 @@ import { query } from '@angular/animations';
 })
 export class HomeComponent implements OnInit {
   constructor(private service: ApiServiceService, private router: Router) {}
-  searchBar = [
-    'Instruments',
-    'auto products',
-    'office and network',
-    'Appliances',
-    'Smartphones',
-    'TV and Entertainment',
-    'Computer',
-  ];
+  searchBar = ["men's clothing", 'jewelery', 'electronics', "women's clothing"];
   asideSearchBar = [
     'Power tools and equipment for the garden',
     'Construction, measurement and cleaning',
@@ -31,14 +23,25 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.GetProductApi().subscribe({
       next: (data) => {
-        this.productData = Object.values(data).slice(0, 6);
-        console.log(this.productData);
+        const productArray = Object.values(data);
+        this.productData = [];
+        const numProducts = 6;
+
+        for (let i = 0; i < numProducts; i++) {
+          const randomIndex = Math.floor(Math.random() * productArray.length);
+          const randomProduct = productArray[randomIndex];
+
+          this.productData.push(randomProduct);
+
+          productArray.splice(randomIndex, 1);
+        }
       },
       error: (error) => {
-        console.log(error);
+        console.error(error);
       },
     });
   }
+
   productClick(id: any, image: string, name: string, price: number) {
     this.router.navigate(['/products'], {
       queryParams: {
@@ -47,6 +50,12 @@ export class HomeComponent implements OnInit {
         productName: name,
         productPrice: price,
       },
+    });
+  }
+  navigateToFilters(index: number) {
+    const selectedValue = this.searchBar[index];
+    this.router.navigate(['/filters'], {
+      queryParams: { value: selectedValue },
     });
   }
 }

@@ -28,12 +28,8 @@
     <form [formGroup]="form">
       <mat-form-field appearance="fill">
         <mat-label>Fill form field</mat-label>
-        <input
-          formControlName="email"
-          matInput
-          placeholder="email1234@gmail.com"
-        />
-        <mat-error *ngIf="fc.email.invalid">{{ "error" }}</mat-error>
+        <input formControlName="name" matInput placeholder="name12345" />
+        <mat-error *ngIf="fc.name.invalid">{{ "error" }}</mat-error>
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
       </mat-form-field>
       <mat-form-field>

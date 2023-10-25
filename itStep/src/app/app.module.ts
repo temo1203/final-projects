@@ -20,6 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FilterProductsComponent } from './filter-products/filter-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     ProductsComponent,
     PipesPipe,
+    FilterProductsComponent,
   ],
   imports: [
     ReactiveFormsModule,
